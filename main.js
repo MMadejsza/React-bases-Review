@@ -1,0 +1,1 @@
+let codeReview = "Działa?" ? true : false

@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import ButtonsPanel from './ButtonsPanel';
 import "./Counter.css"
 
 class Counter extends Component {
     constructor(props) {
         super(props);
+        let initValue = 100
+
+        if (!isNaN(this.props.initValue)) {
+            initValue = parseInt(this.props.initValue);
+        }
+
         this.state = {
-            counterValue: 0,
+            counterValue: initValue,
         }
     }
 
@@ -17,6 +24,20 @@ class Counter extends Component {
         })
     }
 
+    resetCounter = (thatsBtnValueInComponent) => {
+        let resetValue = 0;
+
+        if (!thatsBtnValueInComponent) {
+            if (!isNaN(this.props.initValue)) {
+                resetValue = parseInt(this.props.initValue);
+            }
+        }
+
+        this.setState({
+            counterValue: resetValue,
+        })
+    }
+
     render() {
         return (
             <div className="counter">
@@ -25,7 +46,7 @@ class Counter extends Component {
                 <span className="value">
                     {this.state.counterValue}
                 </span>
-                <button className="btn" onClick={this.changeValue}>Add 1</button>
+                <ButtonsPanel passedFunctionForValue={this.changeValue} passedFunctionForReset={this.resetCounter} />
             </div>
 
         )

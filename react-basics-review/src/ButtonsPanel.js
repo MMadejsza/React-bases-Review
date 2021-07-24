@@ -4,7 +4,7 @@ import "./ButtonsPanel.css"
 class ButtonsPanel extends Component {
 
     resetOrReinitCounter = (btnValue) => {
-        this.props.passedFunctionForReset(btnValue); //Każda klasa może mieć swój state więc skąd react wie że to ten od rodzica a nie szuka w tym komponencie?
+        this.props.passedFunctionForReset(btnValue);
     }
 
     render() {

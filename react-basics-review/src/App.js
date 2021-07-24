@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Counter from "./Counter"
 
@@ -9,7 +8,7 @@ function App() {
         <p>
           JS Counter:
         </p>
-        <Counter myValue="103" />
+        <Counter />
 
       </header>
     </div >

@@ -9,7 +9,6 @@ function App() {
           JS Counter:
         </p>
         <Counter />
-
       </header>
     </div >
   );
